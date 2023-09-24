@@ -11,6 +11,10 @@
 		AC17AFBF2ABEC39E001A973A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC17AFBE2ABEC39E001A973A /* ContentView.swift */; };
 		AC17AFC12ABEC3A0001A973A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC17AFC02ABEC3A0001A973A /* Assets.xcassets */; };
 		AC17AFC42ABEC3A0001A973A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC17AFC32ABEC3A0001A973A /* Preview Assets.xcassets */; };
+		AC17AFCC2ABEC69C001A973A /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = AC17AFCB2ABEC69C001A973A /* BottomSheet */; };
+		AC17AFD12ABECF80001A973A /* mediaDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC17AFD02ABECF80001A973A /* mediaDetailView.swift */; };
+		ACF204402AC053ED0014FD6C /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACF2043F2AC053ED0014FD6C /* MapView.swift */; };
+		ACF204472AC070C60014FD6C /* BottomSheet in Frameworks */ = {isa = PBXBuildFile; productRef = ACF204462AC070C60014FD6C /* BottomSheet */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,8 @@
 		AC17AFBE2ABEC39E001A973A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AC17AFC02ABEC3A0001A973A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AC17AFC32ABEC3A0001A973A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		AC17AFD02ABECF80001A973A /* mediaDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mediaDetailView.swift; sourceTree = "<group>"; };
+		ACF2043F2AC053ED0014FD6C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +32,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC17AFCC2ABEC69C001A973A /* BottomSheet in Frameworks */,
+				ACF204472AC070C60014FD6C /* BottomSheet in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -53,6 +61,8 @@
 			children = (
 				AC17AFBC2ABEC39E001A973A /* imageDetailView_NCApp.swift */,
 				AC17AFBE2ABEC39E001A973A /* ContentView.swift */,
+				AC17AFD02ABECF80001A973A /* mediaDetailView.swift */,
+				ACF2043F2AC053ED0014FD6C /* MapView.swift */,
 				AC17AFC02ABEC3A0001A973A /* Assets.xcassets */,
 				AC17AFC22ABEC3A0001A973A /* Preview Content */,
 			);
@@ -83,6 +93,10 @@
 			dependencies = (
 			);
 			name = "imageDetailView-NC";
+			packageProductDependencies = (
+				AC17AFCB2ABEC69C001A973A /* BottomSheet */,
+				ACF204462AC070C60014FD6C /* BottomSheet */,
+			);
 			productName = "imageDetailView-NC";
 			productReference = AC17AFB92ABEC39E001A973A /* imageDetailView-NC.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +125,9 @@
 				Base,
 			);
 			mainGroup = AC17AFB02ABEC39E001A973A;
+			packageReferences = (
+				AC17AFCA2ABEC69C001A973A /* XCRemoteSwiftPackageReference "bottom-sheet" */,
+			);
 			productRefGroup = AC17AFBA2ABEC39E001A973A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -138,7 +155,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				AC17AFBF2ABEC39E001A973A /* ContentView.swift in Sources */,
+				ACF204402AC053ED0014FD6C /* MapView.swift in Sources */,
 				AC17AFBD2ABEC39E001A973A /* imageDetailView_NCApp.swift in Sources */,
+				AC17AFD12ABECF80001A973A /* mediaDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +361,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AC17AFCA2ABEC69C001A973A /* XCRemoteSwiftPackageReference "bottom-sheet" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/weitieda/bottom-sheet";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.12;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AC17AFCB2ABEC69C001A973A /* BottomSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC17AFCA2ABEC69C001A973A /* XCRemoteSwiftPackageReference "bottom-sheet" */;
+			productName = BottomSheet;
+		};
+		ACF204462AC070C60014FD6C /* BottomSheet */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AC17AFCA2ABEC69C001A973A /* XCRemoteSwiftPackageReference "bottom-sheet" */;
+			productName = BottomSheet;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AC17AFB12ABEC39E001A973A /* Project object */;
 }
