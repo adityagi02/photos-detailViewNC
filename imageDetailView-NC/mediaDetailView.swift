@@ -28,7 +28,7 @@ struct mediaDetailView: View {
     let latitude : Int32
     let location : String
   //  let coordinates : CLLocationCoordinate2D
-    
+
     let dismiss: () -> Void
     
     var body: some View {
@@ -65,28 +65,31 @@ struct mediaDetailView: View {
                     }.padding(.horizontal)
                         .background(Color(UIColor.systemGray5))
                         .padding(.horizontal)
-                        .frame(height : 40)
+                        //.frame(height : 40)
                     
                     // Camera Info
                     
+                    
+                    
                     HStack{
-                        Text("\(cameraMode) ⎯ \(cameraAperture) mm f\(cameraFocalLength)")
+                        Text("\(cameraMode) ⎯ \(cameraAperture) mm ƒ\(String(format: "%.1f", Double(round(1000*cameraFocalLength)/1000)))")
                     }.padding(.horizontal)
                     HStack{
-                        Text("\(cameraMP) • \(String(imageHeight)) x \(String(imageWidth)) • f\(imageSize) MB")
+                        Text(cameraMP < 1 ? String(format: "%.1f MP", cameraMP) : "\(Int(cameraMP)) MP")
+                        Text("• \(String(imageWidth)) x \(String(imageHeight)) • \(String(format: "%.1f", Double(round(1000*imageSize)/1000))) MB")
                     }.padding(.horizontal)
                     Divider().padding(.horizontal)
                     
-                    HStack(alignment: .center){
-                        Text("ISO \(iso)")
+                    HStack(alignment: .center, spacing: geometry.size.width * 0.06){
+                        Text("ISO \(iso)").padding(.horizontal)
                         Divider()
-                        Text("\(cameraAperture) mm")
+                        Text("\(cameraAperture) mm").padding(.horizontal)
                         Divider()
-                        Text("\(imageEV) ev")
+                        Text("\(imageEV) ev").padding(.horizontal)
                         Divider()
-                        Text("f\(cameraFocalLength)")
+                        Text("f\(String(format: "%.1f", Double(round(1000*cameraFocalLength)/1000)))").padding(.horizontal)
                         Divider()
-                        Text("1/\(cameraShutterSpeed)")
+                        Text("1/\(String(format: "%.1f", Double(round(1000*cameraShutterSpeed)/1000))) s").padding(.horizontal)
                         
                     }.padding(.horizontal)
                         .frame(height : 25)
@@ -127,8 +130,8 @@ struct mediaDetailView: View {
     }
 }
 
-//struct MapSettingView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        mediaDetailView(time: Date(), imageName: "IMG_002", deviceName: "Apple iPhone 12 Pro", imageExtension: "Hief", cameraMode: "Front Camera", cameraAperture: 23, cameraFocalLength: 2.2, iso: 40, cameraMP: 12, imageHeight: 4032, imageWidth: 3024, imageSize: 2.3, imageEV: 0, cameraShutterSpeed: 124, longitude: Int32(-116.166_868), latitude: Int32(34.011_286), location: "Delhi, India",  dismiss: {})
-//    }
-//}
+struct MapSettingView_Previews: PreviewProvider {
+    static var previews: some View {
+        mediaDetailView(time: Date(), imageName: "IMG_002", deviceName: "Apple iPhone 12 Pro", imageExtension: "Hief", cameraMode: "Front Camera", cameraAperture: 23, cameraFocalLength: 2.2, iso: 40, cameraMP: 12, imageHeight: 4032, imageWidth: 3024, imageSize: 2.3, imageEV: 0, cameraShutterSpeed: 124, longitude: Int32(-116.166_868), latitude: Int32(34.011_286), location: "Delhi, India",  dismiss: {})
+    }
+}
