@@ -27,11 +27,14 @@ struct mediaDetailView: View {
     let longitude : Int32
     let latitude : Int32
     let location : String
-  //  let coordinates : CLLocationCoordinate2D
 
     let dismiss: () -> Void
     
     var body: some View {
+        
+        @Environment(\.verticalSizeClass) var verticalSizeClass: UserInterfaceSizeClass?
+            @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
+        
         GeometryReader { geometry in
             VStack(alignment: .leading) {
                 
@@ -72,28 +75,60 @@ struct mediaDetailView: View {
                     
                     
                     HStack{
-                        Text("\(cameraMode) ⎯ \(cameraAperture) mm ƒ\(String(format: "%.1f", Double(round(1000*cameraFocalLength)/1000)))")
+                        Text("\(cameraMode) ⎯ \(cameraAperture) mm ƒ\(String(format: "%.1f", Double(round(1000*cameraFocalLength)/1000)))").padding(.leading, 7)
                     }.padding(.horizontal)
                     HStack{
-                        Text(cameraMP < 1 ? String(format: "%.1f MP", cameraMP) : "\(Int(cameraMP)) MP")
+                        Text(cameraMP < 1 ? String(format: "%.1f MP", cameraMP) : "\(Int(cameraMP)) MP").padding(.leading, 7)
                         Text("• \(String(imageWidth)) x \(String(imageHeight)) • \(String(format: "%.1f", Double(round(1000*imageSize)/1000))) MB")
                     }.padding(.horizontal)
                     Divider().padding(.horizontal)
                     
-                    HStack(alignment: .center, spacing: geometry.size.width * 0.06){
-                        Text("ISO \(iso)").padding(.horizontal)
-                        Divider()
-                        Text("\(cameraAperture) mm").padding(.horizontal)
-                        Divider()
-                        Text("\(imageEV) ev").padding(.horizontal)
-                        Divider()
-                        Text("f\(String(format: "%.1f", Double(round(1000*cameraFocalLength)/1000)))").padding(.horizontal)
-                        Divider()
-                        Text("1/\(String(format: "%.1f", Double(round(1000*cameraShutterSpeed)/1000))) s").padding(.horizontal)
-                        
-                    }.padding(.horizontal)
-                        .frame(height : 25)
                     
+                    
+                    
+//                    
+//                    let spacing: CGFloat = {
+//                        if UIDevice.current.userInterfaceIdiom == .pad {
+//                            // For iPads, you can use a different spacing value
+//                            return geometry.size.width * 0.072
+//                        } else {
+//                            if horizontalSizeClass == .regular && verticalSizeClass == .compact {
+//                                return geometry.size.width * 0.9
+//                            }
+//                            // For iPhones, use your original spacing value
+//                            return geometry.size.width / 18
+//                        }
+//                    }()
+                    
+                    
+                    
+                    
+                    
+                    HStack(alignment: .center, spacing: 0) {
+                        HStack(alignment: .center, spacing : 0){
+                            Text("ISO \(iso)")
+                        }.padding()
+                        Divider()
+                        HStack{
+                            Text("\(cameraAperture) mm")
+                        }.padding()
+                        Divider()
+                        HStack{
+                            Text("\(imageEV) ev")
+                        }.padding()
+                        Divider()
+                        HStack{
+                            Text("f\(String(format: "%.1f", Double(round(1000 * cameraFocalLength) / 1000)))")
+                        }.padding()
+                        Divider()
+                        HStack{
+                            Text("1/\(String(format: "%.1f", Double(round(1000 * cameraShutterSpeed) / 1000))) s")
+                        }.padding()
+                    }
+                    .padding(.horizontal)
+                    .frame(height: 10)
+                    .font(.footnote)
+                    .font(.system(size: 78))
                 }
                 
                 // Map View
@@ -111,7 +146,7 @@ struct mediaDetailView: View {
                     .padding(.horizontal)
                     .frame(height : 30)
                 }
-                
+                .padding(.bottom, 10)
                 // Download Button
                 
                 HStack(alignment : .center){
