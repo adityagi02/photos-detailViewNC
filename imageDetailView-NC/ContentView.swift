@@ -25,7 +25,7 @@ struct ContentView: View {
                 }
                 .bottomSheet(
                     isPresented: $showMapSetting,
-                    height: 440,
+                    height: 490,
                     topBarHeight: 16,
                     topBarCornerRadius: 16,
                     showTopIndicator: false

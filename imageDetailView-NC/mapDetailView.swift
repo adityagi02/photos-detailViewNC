@@ -12,7 +12,7 @@ struct mapDetailView: View {
     let longitude : Int32
     let latitude : Int32
     let location : String
-
+    
     var body : some View {
         // Map View
         
@@ -36,7 +36,7 @@ struct mapDetailView: View {
                 }.background(Color(UIColor.systemGray5)).cornerRadius(10).padding()
             }
         }
-
+        
     }
 }
 
