@@ -29,7 +29,10 @@ struct mapDetailView: View {
                             
                         })
                         Spacer()
-                    }.padding()
+                    }.padding(.leading, 5)
+                        .padding(.top, 12)
+                        .padding(.bottom, 10)
+                    
                 }.background(Color(UIColor.systemGray5)).cornerRadius(10).padding()
             }
         }
