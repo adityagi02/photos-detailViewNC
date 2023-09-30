@@ -21,11 +21,9 @@ struct ContentView: View {
                 Text("Details")
             })
             .listStyle(PlainListStyle())
-                .bottomSheet(isPresented: $showList, height: 500) {
-                }
                 .bottomSheet(
                     isPresented: $showMapSetting,
-                    height: 490,
+                    height: 450,
                     topBarHeight: 16,
                     topBarCornerRadius: 16,
                     showTopIndicator: false

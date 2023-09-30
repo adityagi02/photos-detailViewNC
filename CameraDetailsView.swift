@@ -33,7 +33,8 @@ struct CameraDetailsView: View {
             HStack{
                 Text("\(deviceName)")
                     .bold()
-                    .foregroundColor(.white)
+                    .foregroundColor(.primary)
+                    .padding(.leading, -4)
                 
                 Spacer()
                 
@@ -42,6 +43,7 @@ struct CameraDetailsView: View {
                 }.padding(.leading, 4)
                     .padding(.trailing, 4)
                     .background(Color.black.opacity(0.3))
+                    .cornerRadius(3)
                 
                 
             }.padding(.top, 10)
@@ -53,8 +55,8 @@ struct CameraDetailsView: View {
             
             HStack{
                 Text("\(cameraMode) ⎯ \(cameraAperture) mm ƒ\(String(format: "%.1f", Double(round(1000*cameraFocalLength)/1000)))")
-                    .foregroundColor(.gray)
-                
+                    .foregroundColor(.primary.opacity(0.6))
+                    .padding(.leading, -4)
                 Spacer()
                 
             }.padding(.leading)
@@ -71,8 +73,8 @@ struct CameraDetailsView: View {
                 
             }
             .padding(.top, -6)
-            .padding(.leading, 9)
-            .foregroundColor(.gray)
+            .padding(.leading, 4.6)
+            .foregroundColor(.primary.opacity(0.6))
             
             Divider()
                 .background(Color.gray)
@@ -114,7 +116,7 @@ struct CameraDetailsView: View {
                     .fixedSize()
                 }.font(.system(size: 13))
                     .frame(height: 17)
-                    .foregroundColor(.gray)
+                    .foregroundColor(.primary.opacity(0.6))
             }.frame(height: 25)
         }
         .background(Color(UIColor.systemGray5))

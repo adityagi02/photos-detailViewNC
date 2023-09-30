@@ -21,7 +21,7 @@ struct mapDetailView: View {
                 VStack(){
                     MapView(coordinate: CLLocationCoordinate2D(latitude: CLLocationDegrees(latitude), longitude: CLLocationDegrees(longitude)))
                         .ignoresSafeArea(edges: .top)
-                        .frame(height: 150)
+                        .frame(height: 100)
                         .padding(.bottom, -12)
                     
                     HStack{
@@ -33,7 +33,9 @@ struct mapDetailView: View {
                         .padding(.top, 12)
                         .padding(.bottom, 10)
                     
-                }.background(Color(UIColor.systemGray5)).cornerRadius(10).padding()
+                }.background(Color(UIColor.systemGray5))
+                    .cornerRadius(10)
+                    .padding()
             }
         }
         
