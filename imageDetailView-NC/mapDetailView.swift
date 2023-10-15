@@ -13,10 +13,10 @@ struct mapDetailView: View {
     let longitude: Double  // Changed the data type to Double for better accuracy
     let latitude: Double   // Changed the data type to Double for better accuracy
     let location: String
-
+    
     var body: some View {
         // Map View
-
+        
         Group {
             HStack {
                 VStack {
@@ -24,7 +24,7 @@ struct mapDetailView: View {
                         .ignoresSafeArea(edges: .top)
                         .frame(height: 100)
                         .padding(.bottom, -12)
-
+                    
                     HStack {
                         Button("\(location) 〉", action: {
                             openInMaps()
@@ -41,7 +41,7 @@ struct mapDetailView: View {
             }
         }
     }
-
+    
     func openInMaps() {
         let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let placemark = MKPlacemark(coordinate: coordinate)

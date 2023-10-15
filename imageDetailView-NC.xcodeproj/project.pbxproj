@@ -47,7 +47,6 @@
 		AC17AFB02ABEC39E001A973A = {
 			isa = PBXGroup;
 			children = (
-				AC6C2B2B2AC7382600376084 /* CameraDetailsView.swift */,
 				AC17AFBB2ABEC39E001A973A /* imageDetailView-NC */,
 				AC17AFBA2ABEC39E001A973A /* Products */,
 			);
@@ -65,6 +64,7 @@
 			isa = PBXGroup;
 			children = (
 				AC17AFBC2ABEC39E001A973A /* imageDetailView_NCApp.swift */,
+				AC6C2B2B2AC7382600376084 /* CameraDetailsView.swift */,
 				AC17AFBE2ABEC39E001A973A /* ContentView.swift */,
 				AC17AFD02ABECF80001A973A /* mediaDetailView.swift */,
 				AC6C2B292AC72BD500376084 /* mapDetailView.swift */,
