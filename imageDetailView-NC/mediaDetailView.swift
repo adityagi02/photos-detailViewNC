@@ -58,7 +58,7 @@ struct mediaDetailView: View {
                     
                     
                     // Group of Map View + Location
-                    mapDetailView(longitude: self.longitude, latitude: self.latitude, location: self.location)
+                    mapDetailView(longitude: Double(self.longitude), latitude: Double(self.latitude), location: self.location)
                         .padding(.leading, 0)
                         .padding(.trailing, 0)
                         .padding(.top, -7)
