@@ -35,42 +35,41 @@ struct mediaDetailView: View {
         @Environment(\.verticalSizeClass) var verticalSizeClass: UserInterfaceSizeClass?
         @Environment(\.horizontalSizeClass) var horizontalSizeClass: UserInterfaceSizeClass?
         
-        ScrollView {
-            GeometryReader { geometry in
-                VStack(alignment: .leading, spacing: -8) {
-                    
-                    // Date information
-                    HStack {
-                        Text("No date information").bold()
-                        Spacer()
-                        Image(systemName: "xmark.circle.fill")
-                            .foregroundColor(.gray)
-                            .font(.system(size: 26))
-                            .onTapGesture { dismiss() }
-                    }.padding(.horizontal)
-                    
-                    
-                    // Image Name Information
-                    Text("\(imageName)").padding(.horizontal).opacity(0.8)
-                    
-                    // Camera Information
-                    CameraDetailsView(time: Date(), imageName: "IMG_002", deviceName: "Apple iPhone 12 Pro", imageExtension: "Hief", cameraMode: "Front Camera", cameraAperture: 23, cameraFocalLength: 2.2, iso: 40, cameraMP: 12, imageHeight: 4032, imageWidth: 3024, imageSize: 2.3, imageEV: 0, cameraShutterSpeed: 124, dismiss: {})
-                    
-                    
-                    // Group of Map View + Location
-                    mapDetailView(longitude: Double(self.longitude), latitude: Double(self.latitude), location: self.location)
-                        .padding(.leading, 0)
-                        .padding(.trailing, 0)
-                        .padding(.top, -7)
-                    
-                    
-                    // Download Button
-                    downloadButtonView.padding()
-                        .padding(.leading, 0)
-                        .padding(.trailing, 0)
-                        .padding(.top, -7)
-                }
+        GeometryReader { geometry in
+            VStack(alignment: .leading, spacing: -8) {
+                
+                // Date information
+                HStack {
+                    Text("No date information").bold()
+                    Spacer()
+                    Image(systemName: "xmark.circle.fill")
+                        .foregroundColor(.gray)
+                        .font(.system(size: 26))
+                        .onTapGesture { dismiss() }
+                }.padding(.horizontal)
+                
+                
+                // Image Name Information
+                Text("\(imageName)").padding(.horizontal).opacity(0.8)
+                
+                // Camera Information
+                CameraDetailsView(time: Date(), imageName: "IMG_002", deviceName: "Apple iPhone 12 Pro", imageExtension: "Hief", cameraMode: "Front Camera", cameraAperture: 23, cameraFocalLength: 2.2, iso: 40, cameraMP: 12, imageHeight: 4032, imageWidth: 3024, imageSize: 2.3, imageEV: 0, cameraShutterSpeed: 124, dismiss: {})
+                
+                
+                // Group of Map View + Location
+                mapDetailView(longitude: Double(self.longitude), latitude: Double(self.latitude), location: self.location)
+                    .padding(.leading, 0)
+                    .padding(.trailing, 0)
+                    .padding(.top, -7)
+                
+                
+                // Download Button
+                downloadButtonView.padding()
+                    .padding(.leading, 0)
+                    .padding(.trailing, 0)
+                    .padding(.top, -7)
             }
+            //.frame(maxWidth: 800, alignment: .center)
         }
     }
     
