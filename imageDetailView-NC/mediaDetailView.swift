@@ -40,7 +40,14 @@ struct mediaDetailView: View {
                 
                 // Date information
                 HStack {
-                    Text("No date information").bold()
+                    VStack{
+                        Text("No date information").bold()
+                        // Image Name Information
+                        Text("\(imageName)")
+                            .padding(.leading, -79)
+//                            .padding(.horizontal)
+                            .opacity(0.8)
+                    }
                     Spacer()
                     Image(systemName: "xmark.circle.fill")
                         .foregroundColor(.gray)
@@ -49,8 +56,7 @@ struct mediaDetailView: View {
                 }.padding(.horizontal)
                 
                 
-                // Image Name Information
-                Text("\(imageName)").padding(.horizontal).opacity(0.8)
+                
                 
                 // Camera Information
                 CameraDetailsView(time: Date(), imageName: "IMG_002", deviceName: "Apple iPhone 12 Pro", imageExtension: "Hief", cameraMode: "Front Camera", cameraAperture: 23, cameraFocalLength: 2.2, iso: 40, cameraMP: 12, imageHeight: 4032, imageWidth: 3024, imageSize: 2.3, imageEV: 0, cameraShutterSpeed: 124, dismiss: {})
