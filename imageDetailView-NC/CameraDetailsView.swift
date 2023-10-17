@@ -13,7 +13,7 @@ struct CameraDetailsView: View {
     let deviceName: String
     let imageExtension : String
     let cameraMode : String
-    let cameraAperture : Int
+    let apertureValue : Int
     let lensLength : Double
     let iso : Int
     let megaPixels : Int
@@ -54,7 +54,7 @@ struct CameraDetailsView: View {
             Divider().background(Color.gray)
             
             HStack{
-                Text("\(cameraMode) ⎯ \(lensLength) mm ƒ\(String(format: "%.1f", Double(round(1000*apertureValue)/1000)))")
+                Text("\(cameraMode) ⎯ \(lensLength) mm ƒ\(String(format: "%.1f", Double(round(Double(1000*apertureValue))/1000)))")
                     .foregroundColor(.primary.opacity(0.6))
                     .padding(.leading, -4)
                 Spacer()
@@ -103,7 +103,7 @@ struct CameraDetailsView: View {
                     Divider().background(.gray)
                     
                     VStack {
-                        Text("f\(String(format: "%.1f", Double(round(1000 * cameraFocalLength) / 1000)))")
+                        Text("ƒ\(String(format: "%.1f", Double(round(Double(1000 * apertureValue)) / 1000)))")
                     }
                     .frame(width: geo.size.width * 0.2, alignment: .center)
                     .fixedSize()
@@ -127,6 +127,6 @@ struct CameraDetailsView: View {
 
 struct CameraDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        CameraDetailsView(time: Date(), imageName: "IMG_002", deviceName: "Apple iPhone 12 Pro", imageExtension: "Hief", cameraMode: "Front Camera", cameraAperture: 23, cameraFocalLength: 2.2, iso: 40, cameraMP: 12, imageHeight: 4032, imageWidth: 3024, imageSize: 2.3, imageEV: 0, cameraShutterSpeed: 124, dismiss: {})
+        CameraDetailsView(time: Date(), imageName: "IMG_002", deviceName: "Apple iPhone 12 Pro", imageExtension: "Hief", cameraMode: "Front Camera", apertureValue: 23, lensLength: 2.2, iso: 40, megaPixels: 12, height: 4032, width: 3024, imageSize: 2.3, exposureValue: 0, shutterSpeedApex: 124, dismiss: {})
     }
 }
