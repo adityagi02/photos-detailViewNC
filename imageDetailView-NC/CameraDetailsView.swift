@@ -14,14 +14,14 @@ struct CameraDetailsView: View {
     let imageExtension : String
     let cameraMode : String
     let cameraAperture : Int
-    let cameraFocalLength : Double
+    let lensLength : Double
     let iso : Int
-    let cameraMP : Int
-    let imageHeight : Int
-    let imageWidth : Int
+    let megaPixels : Int
+    let height : Int
+    let width : Int
     let imageSize : Double
-    let imageEV : Int
-    let cameraShutterSpeed : Double
+    let exposureValue : Int
+    let shutterSpeedApex : Double
     
     
     let dismiss: () -> Void
@@ -54,7 +54,7 @@ struct CameraDetailsView: View {
             Divider().background(Color.gray)
             
             HStack{
-                Text("\(cameraMode) ⎯ \(cameraAperture) mm ƒ\(String(format: "%.1f", Double(round(1000*cameraFocalLength)/1000)))")
+                Text("\(cameraMode) ⎯ \(lensLength) mm ƒ\(String(format: "%.1f", Double(round(1000*apertureValue)/1000)))")
                     .foregroundColor(.primary.opacity(0.6))
                     .padding(.leading, -4)
                 Spacer()
@@ -63,11 +63,11 @@ struct CameraDetailsView: View {
             
             
             HStack{
-                Text(cameraMP < 1 ? String(format: "%.1f MP", cameraMP) : "\(Int(cameraMP)) MP")
+                Text(megaPixels < 1 ? String(format: "%.1f MP", megaPixels) : "\(Int(megaPixels)) MP")
                     .padding(.leading, 7)
                     .padding(.trailing, -3)
                 
-                Text("• \(String(imageWidth)) x \(String(imageHeight)) • \(String(format: "%.1f", Double(round(1000*imageSize)/1000))) MB")
+                Text("• \(String(width)) x \(String(height)) • \(String(format: "%.1f", Double(round(1000*imageSize)/1000))) MB")
                 
                 Spacer()
                 
@@ -89,14 +89,14 @@ struct CameraDetailsView: View {
                     Divider().background(.gray)
                     
                     VStack {
-                        Text("\(cameraAperture) mm")
+                        Text("\(lensLength) mm")
                     }
                     .frame(width: geo.size.width * 0.2, alignment: .center)
                     .fixedSize()
                     Divider().background(.gray)
                     
                     VStack {
-                        Text("\(imageEV) ev")
+                        Text("\(exposureValue) ev")
                     }
                     .frame(width: geo.size.width * 0.2, alignment: .center)
                     .fixedSize()
@@ -110,7 +110,7 @@ struct CameraDetailsView: View {
                     Divider().background(.gray)
                     
                     VStack {
-                        Text("1/\(String(format: "%.0f", Double(round(1000 * cameraShutterSpeed) / 1000))) s")
+                        Text("1/\(String(format: "%.0f", Double(round(1000 * shutterSpeedApex) / 1000))) s")
                     }
                     .frame(width: geo.size.width * 0.2, alignment: .center)
                     .fixedSize()
