@@ -28,6 +28,7 @@
 		AC17AFC32ABEC3A0001A973A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AC17AFD02ABECF80001A973A /* mediaDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mediaDetailView.swift; sourceTree = "<group>"; };
 		AC24D6402ADE3A2E00F8D60D /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		AC5DA1B72ADF052500B3AC65 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		AC6C2B292AC72BD500376084 /* mapDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mapDetailView.swift; sourceTree = "<group>"; };
 		AC6C2B2B2AC7382600376084 /* CameraDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraDetailsView.swift; sourceTree = "<group>"; };
 		ACF2043F2AC053ED0014FD6C /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		AC17AFB02ABEC39E001A973A = {
 			isa = PBXGroup;
 			children = (
+				AC5DA1B72ADF052500B3AC65 /* README.md */,
 				AC17AFBB2ABEC39E001A973A /* imageDetailView-NC */,
 				AC17AFBA2ABEC39E001A973A /* Products */,
 			);
