@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MediaView: View {
     var body: some View {
-        ZStack{
+        VStack{
             media().body
                
         }
