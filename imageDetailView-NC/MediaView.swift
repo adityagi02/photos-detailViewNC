@@ -27,7 +27,7 @@ struct MediaView_Previews: PreviewProvider {
 struct media : View {
     var body: some View {
         GeometryReader { geometry in
-            Image("placeholder")
+            Image("testImage")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width: geometry.size.width, height: geometry.size.height)
