@@ -1,5 +1,8 @@
 # Photos App Detail Bottom Sheet
 
+![ezgif com-video-to-gif](https://github.com/adityagi02/photos-detailViewNC/assets/77538183/eae76160-f197-47dc-bd33-267b74b8b8b8)
+![Screenshot 2023-10-31 at 11 09 31 PM](https://github.com/adityagi02/photos-detailViewNC/assets/77538183/b62a5872-77bd-49e5-bc7a-f7f870ce95ac)
+
 
 This GitHub repository contains SwiftUI code for creating a view similar to the Apple Photos app's Media Detail View Bottom Sheet. This view provides a sleek and intuitive user interface for displaying media details and interacting with it, just like the Photos app. I made it for NextCloud App, but someone made and implemented it😫. So putting it PUBLIC!!
 
